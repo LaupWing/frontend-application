@@ -24,7 +24,7 @@ Dit kan elke element zijn  -->
     {{risico}}
     {{testen}}
 
-    <h1 @click="testChange">{{testen}}</h1>
+    <button type="button" name="button">Press to change title(TestElement)</button>
   </div>
 </template>
 <script>
