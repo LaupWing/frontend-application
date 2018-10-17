@@ -7,6 +7,8 @@
     <!-- Hieronder word de data test gebind aan een aangemaakte variabele msg -->
     <app-indicator :msg='test' v-on:changeTest="testing($event)"></app-indicator>
     {{test}}
+    <br>
+    {{test2}}
     <hr>
     <nav>
       <!-- Hier worden de  -->
@@ -16,7 +18,7 @@
     </nav>
     <hr>
     <!-- Hier worden de verschillende route component geladen -->
-    <router-view></router-view>
+    <router-view v-on:changeOk="testout($event)"></router-view>
   </div>
 </template>
 
@@ -24,11 +26,15 @@
 export default {
   data () {
     return {
-      test: 'testen'
+      test: 'testen',
+      test2: "De echt test"
     }
   },
   methods:{
     testing:function(event){
+      this.test = event
+    },
+    testout:function(event){
       this.test = event
     }
 

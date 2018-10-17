@@ -2,19 +2,20 @@
 Dit kan elke element zijn  -->
 <template>
   <div class="userInput">
-    <select v-model="gewicht1" @change="onchange">
+    <select v-model="gewicht1" @change="onchange(gewicht1)" v-on:change="test">
       <option :value="huishouden.waarde" v-for="huishouden in typeHuisHouden" >{{huishouden.huishouden}}</option>
     </select>
 
-    <select v-model="gewicht2" @change="onchange">
+    <select v-model="gewicht2" @change="onchange(gewicht2)"
+    v-on:change="test">
       <option :value="diploma.waarde" v-for="diploma in actueleDiploma" >{{diploma.diploma}}</option>
     </select>
 
-    <select v-model="gewicht3" @change="onchange">
+    <select v-model="gewicht3" @change="onchange(gewicht3)" v-on:change="test">
       <option :value="diploma.waarde" v-for="diploma in diplomaVader" >{{diploma.diploma}}</option>
     </select>
 
-    <select v-model="gewicht4" @change="onchange">
+    <select v-model="gewicht4" @change="onchange(gewicht4)" v-on:change="test">
       <option :value="diploma.waarde" v-for="diploma in diplomaMoeder" >{{diploma.diploma}}</option>
     </select>
     {{gewicht1}}
@@ -28,12 +29,13 @@ Dit kan elke element zijn  -->
   </div>
 </template>
 <script>
-export default {
+const random = Math.random()*2;
 
+export default {
   data () {
     return {
       testen: "hallo",
-      risico: "",
+      risico: 0,
       gewicht1:"",
       gewicht2: "",
       gewicht3: "",
@@ -70,11 +72,21 @@ export default {
     }
   },
   methods:{
-    onchange(){
-      this.risico = this.gewicht1 + this.gewicht2 + this.gewicht3 + this.gewicht4;
+    onchange(gewicht){
+      this.risico = this.risico + gewicht;
+      // const array  = [this.gewicht1, this.gewicht2, this.gewicht3, this.gewicht4];
+      // for (var i = 0; i < array.length; i++) {
+      //   this.risico= this.risico+array[i]
+      // }
+      console.log(array);
+      // this.risico = this.gewicht1 + this.gewicht2 + this.gewicht3 + this.gewicht4;
+      console.log(this.risico)
     },
-    testChange(){
-      this.$emit('changing', 'test')
+    test: function(){
+      // Hier word een event ge-emit
+      // De eerste parameter is hoe je de event noemt
+      // Tweede parameter is de data dat je wil meegeven
+      this.$emit("changeOk", this.risico)
     }
   }
 }
