@@ -7,15 +7,16 @@ import App from './App.vue';
 import Users from './Users.vue';
 import Home from './Home.vue';
 import Input from './input.vue';
-import indicator from './indicator.vue';
+import Indicator from './indicator.vue';
+import Title from './titel.vue';
 
 // --Hier word een components gemaakt zodat we dit in de hoofd pagina kunnen gebruiken
 //-- als de component test heet moet je dan <test></test> gebruiken
 // het werkt net als een normale element dan dus!
 // NOTE: een andere manier is op in de component zelf de andere component te importeren
 // Bekijk simpelTesten.vue bestand hoe dit in zijn werking gaat
-Vue.component('app-indicator', indicator);
-
+Vue.component('app-indicator', Indicator);
+Vue.component('app-title', Title);
 
 // --Vue.use zorgt ervoor dat we de vue router package kunne gebruiken
 // --Router zorgt ervoor dat als je een nieuwe component laat dat laden

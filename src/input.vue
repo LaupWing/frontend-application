@@ -32,9 +32,6 @@ export default {
 
   data () {
     return {
-      components:{
-        'homehallo': Home
-      },
       testen: "hallo",
       risico: "",
       gewicht1:"",

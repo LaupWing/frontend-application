@@ -1,8 +1,7 @@
 <!-- Dit is de parent component. Het is alleen mogelijk om vanaf hier data mee te geven naar de kleinere components -->
 <template>
   <div id="app">
-    <title-component></title-component>
-
+    <app-title></app-title>
     <!-- Hier word een component gebruikt -->
     <!-- Omdat dit een parent element is kan er data worden meegegeven aan de component -->
     <app-indicator :msg='test'></app-indicator>

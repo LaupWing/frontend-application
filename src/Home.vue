@@ -7,7 +7,7 @@
 <script>
 
 export default {
-  // Als er in een andere
+
   props: ['testgo','waarde1'],
   data () {
     return {
