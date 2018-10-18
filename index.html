@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <meta charset="utf-8">
     <title>vue-routing</title>
   </head>
@@ -8,4 +10,14 @@
     <div id="app"></div>
     <script src="/dist/build.js"></script>
   </body>
+<script>
+const nav = document.querySelector("nav");
+console.log(nav);
+const navButton = document.querySelector(".nav-button");
+
+navButton.addEventListener("click", function(){
+  console.log("test")
+})
+
+</script>
 </html>

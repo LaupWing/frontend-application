@@ -6,5 +6,7 @@
 </template>
 <!-- Je hoeft hier geen export aan te geven omdat dit in de background gebeurt door de webpack package -->
 <style media="screen">
-
+  h1{
+    margin: 0;
+  }
 </style>
