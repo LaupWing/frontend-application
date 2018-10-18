@@ -41,30 +41,30 @@ export default {
     border-radius: 50%; */
     margin: 0 auto;
     background-color: #f7f7f7;
-background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
-background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
-background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
-background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
-background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
-color: #a7a7a7;
-width: 144px;
-height: 144px;
-position: relative;
-text-align: center;
-line-height: 144px;
-border-radius: 50%;
-box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+    background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
+    background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
+    background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
+    background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
+    color: #a7a7a7;
+    width: 144px;
+    height: 144px;
+    position: relative;
+    text-align: center;
+    line-height: 144px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
   }
   .indicator-wrap:before{
     content: "";
-  display: block;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #fff;
-  width: 100%;
-  height: 1px;
-  position: absolute;
-  top: 50%;
-  z-index: -1;
+    display: block;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    z-index: -1;
   }
   .indicator:before{
     content: "";

@@ -143,7 +143,7 @@ export default {
   data() {
     return {
       testen: "hallo",
-      risico: 0,
+      risico: "",
       gewicht1: "",
       gewicht2: "",
       gewicht3: "",
@@ -151,35 +151,35 @@ export default {
       changet: "test",
       typeHuisHouden: [{
           huishouden: "Onbekend",
-          waarde: 2
+          waarde: 0.80564
         },
         {
           huishouden: "Eenouderhuishouden",
-          waarde: 3
+          waarde: 0.49608
         },
         {
           huishouden: "Eenpersoonshuishouden",
-          waarde: 4
+          waarde: 0.49608
         },
         {
           huishouden: "Gehuwd zonder kinderen",
-          waarde: 5
+          waarde: 1.06108
         },
         {
           huishouden: "Institutioneel huidhouden",
-          waarde: 6
+          waarde: 1.92321
         },
         {
           huishouden: "Niet-gehuwd paar met kinderen",
-          waarde: 4
+          waarde: 0.32694
         },
         {
           huishouden: "Niet-gehuwd paar zonder kinderen",
-          waarde: 5
+          waarde: -14.15530
         },
         {
           huishouden: "Overig huishouden",
-          waarde: 7
+          waarde: 0.91365
         }
       ],
       actueleDiploma: [{
@@ -239,16 +239,28 @@ export default {
     onchange(gewicht) {
       // BUG de gebruiker moet alles op volgorde gaan invullen anders word er een cijfer
       // simple achter geplakt in plaats van toegevoegd of afgehaald
-      this.risico = this.gewicht1 + this.gewicht2 + this.gewicht3 + this.gewicht4;
+      // this.risico = this.gewicht1 + this.gewicht2 + this.gewicht3 + this.gewicht4;
+
       console.log(this.risico)
       // Pogingen om de bug te fixen hier beneden
       // this.risico = this.risico + gewicht;
-      // const array = [this.gewicht1, this.gewicht2, this.gewicht3, this.gewicht4];
+      const array = [this.gewicht1, this.gewicht2, this.gewicht3, this.gewicht4];
+
+      var sum = array.reduce(function (total, weight) {
+        return total + Number(weight)
+      },0)
+      // reduce moet altijd een function aan gekoppeld er worden.
+      var calc = Number((1/(1+Math.exp(-1*(-8.572219+sum)))*100).toFixed(2))
+      this.risico = calc;
+      console.log(sum)
+
       // for (var i = 0; i < array.length; i++) {
-      //   array[i]
-      //   this.risico = parseInt(this.risico) + parseInt(array[i])
+      //   // array[i]
+      //
+      //   this.risico = this.risico + array[i]
       // }
-      // console.log(array);
+      // console.log(this.risico);
+      // console.log(this.array)
     },
     test: function() {
       // Hier word een event ge-emit

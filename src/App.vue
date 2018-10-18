@@ -11,14 +11,14 @@
     <br>
     {{test2}}
   </header>
-  <nav>
+  <nav :style="{transform: navToggle()}">
     <!-- Hier worden de  -->
     <div class="nav-wrap">
       <router-link class="nav-item" to='/'>Home</router-link>
       <router-link class="nav-item" to='/users'>Users</router-link>
       <router-link class="nav-item" to='/input'>Users</router-link>
     </div>
-    <div class="nav-button">
+    <div @click="navControl" class="nav-button">
       <i class="fas fa-sort-up"></i>
     </div>
   </nav>
@@ -28,19 +28,16 @@
 </template>
 
 <script>
-const nav = document.querySelector(".nav");
-console.log(nav);
-const navButton = document.querySelector(".nav-button");
-
+// const nav = document.querySelector(".nav");
+// console.log(nav);
+// const navButton = document.querySelector(".nav-button");
 // navButton.addEventListener("click", function(){
 //   console.log("test")
 // })
-
-
-
 export default {
   data() {
     return {
+      openNav: false,
       test: 'testen',
       test2: "De echt test"
     }
@@ -51,6 +48,17 @@ export default {
     },
     testout: function(event) {
       this.test = event
+    },
+    navControl: function(){
+      this.openNav = (this.openNav == false?
+      this.openNav = true : this.openNav = false)
+    },
+    navToggle: function(){
+      return(
+        this.openNav == true ?
+        "translateX(-200px)" :
+        "translateX(0)"
+      )
     }
 
   }
