@@ -16,6 +16,7 @@ Dit kan elke element zijn  -->
   </div>
   <div class="userInput" :style="{border: currentBorder}">
     <select :style="{background: currentColor}" v-model="gewicht" @change="onchange(gewicht)" v-on:change="test">
+      <option value="" disabled selected>Geslacht</option>
       <option :value="geslacht.waarde" v-for="geslacht in geslacht">{{geslacht.geslacht}}</option>
     </select>
 
@@ -83,6 +84,7 @@ li {
   margin-left: -15px;
   color: white;
   font-family: 'Comfortaa', cursive;
+  cursor: pointer;
 }
 
 li:first-child {
@@ -272,17 +274,15 @@ export default {
   },
   methods: {
     onchange(gewicht) {
-      // BUG de gebruiker moet alles op volgorde gaan invullen anders word er een cijfer
-      // simple achter geplakt in plaats van toegevoegd of afgehaald
-      // this.risico = this.gewicht1 + this.gewicht2 + this.gewicht3 + this.gewicht4;
-      // Pogingen om de bug te fixen hier beneden
-      // this.risico = this.risico + gewicht;
-      const array = [this.gewicht1, this.gewicht2, this.gewicht3, this.gewicht4];
 
+      // this.risico = this.risico + gewicht;
+      const array = [this.gewicht, this.gewicht1, this.gewicht2, this.gewicht3, this.gewicht4];
+
+      // reduce moet altijd een function gekoppeld hebben.
+      // reduce telt alle waardes in een array bij elkaar op
       var sum = array.reduce(function(total, weight) {
         return total + Number(weight)
       }, 0)
-      // reduce moet altijd een function aan gekoppeld er worden.
       var calc = Number((1 / (1 + Math.exp(-1 * (-8.572219 + sum))) * 100).toFixed(2))
       this.risico = calc;
 
