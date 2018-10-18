@@ -7,9 +7,6 @@
     <!-- Omdat dit een parent element is kan er data worden meegegeven aan de component -->
     <!-- Hieronder word de data test gebind aan een aangemaakte variabele msg -->
     <app-indicator :msg='test' v-on:changeTest="testing($event)"></app-indicator>
-    {{test}}
-    <br>
-    {{test2}}
   </header>
   <nav :style="{transform: navToggle()}">
     <!-- Hier worden de  -->
@@ -18,12 +15,12 @@
       <router-link class="nav-item" to='/users'>Users</router-link>
       <router-link class="nav-item" to='/input'>Users</router-link>
     </div>
-    <div @click="navControl" class="nav-button">
+    <div :style="{background: currentColor}" @click="navControl" class="nav-button">
       <i class="fas fa-sort-up"></i>
     </div>
   </nav>
   <!-- Hier worden de verschillende route component geladen -->
-  <router-view v-on:changeOk="testout($event)"></router-view>
+  <router-view v-on:sendingColor="colorReceive($event)" v-on:changeOk="testout($event)"></router-view>
 </div>
 </template>
 
@@ -39,7 +36,8 @@ export default {
     return {
       openNav: false,
       test: 'testen',
-      test2: "De echt test"
+      test2: "De echt test",
+      currentColor: "",
     }
   },
   methods: {
@@ -47,7 +45,11 @@ export default {
       this.test = event
     },
     testout: function(event) {
+      console.log(event)
       this.test = event
+    },
+    colorReceive: function(color){
+      this.currentColor = color
     },
     navControl: function(){
       this.openNav = (this.openNav == false?
