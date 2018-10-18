@@ -3,16 +3,19 @@ Dit kan elke element zijn  -->
 <template>
 <div class="main">
   <div class="navigation">
-    <li style="background: #E72A75">Categorie</li>
+    <!-- <li style="background: #E72A75">Categorie</li>
     <li style="background:#A6C71F">Categorie</li>
     <li style="background:#32BBE8">Categorie</li>
     <li style="background:#F8AB0C">Categorie</li>
-    <li style="background:lightblue">Categorie</li>
+    <li style="background:lightblue">Categorie</li> -->
+
+  <li :class="{activeTab : categorie == openTab}" v-for="categorie in categorien"  @click="colorChanging(categorie.color), testingIteration(categorie)" :style="{background: categorie.color}"> {{categorie.label}} </li>
+
+
+
   </div>
-  <div class="userInput">
-
-
-      <select v-model="gewicht1" @change="onchange(gewicht1)" v-on:change="test">
+  <div class="userInput" :style="{border: currentBorder}">
+      <select :style="{background: currentColor}" v-model="gewicht1" @change="onchange(gewicht1)" v-on:change="test">
         <option value="" disabled selected>Type huishouden</option>
         <!-- ## de de v-for word er geloopt door de array typehuishouden en word er een huishouden
       variabele aangemaakt zodat we dat kunnne gebruiken als een index cijfer(deze index cijfer
@@ -24,39 +27,27 @@ Dit kan elke element zijn  -->
       </select>
 
 
-
-
-      <select v-model="gewicht2" @change="onchange(gewicht2)" v-on:change="test">
+      <select :style="{background: currentColor}" v-model="gewicht2" @change="onchange(gewicht2)" v-on:change="test">
         <option :value="diploma.waarde" v-for="diploma in actueleDiploma">{{diploma.diploma}}</option>
       </select>
 
-
-
-      <select v-model="gewicht3" @change="onchange(gewicht3)" v-on:change="test">
+      <select :style="{background: currentColor}" v-model="gewicht3" @change="onchange(gewicht3)" v-on:change="test">
         <option :value="diploma.waarde" v-for="diploma in diplomaVader">{{diploma.diploma}}</option>
       </select>
 
-
-
-      <select v-model="gewicht4" @change="onchange(gewicht4)" v-on:change="test">
+      <select :style="{background: currentColor}" v-model="gewicht4" @change="onchange(gewicht4)" v-on:change="test">
         <option :value="diploma.waarde" v-for="diploma in diplomaMoeder">{{diploma.diploma}}</option>
       </select>
 
-
-
-      <select v-model="gewicht4" @change="onchange(gewicht4)" v-on:change="test">
+      <select :style="{background: currentColor}" v-model="gewicht4" @change="onchange(gewicht4)" v-on:change="test">
         <option :value="diploma.waarde" v-for="diploma in diplomaMoeder">{{diploma.diploma}}</option>
       </select>
 
-
-
-      <select v-model="gewicht4" @change="onchange(gewicht4)" v-on:change="test">
+      <select :style="{background: currentColor}" v-model="gewicht4" @change="onchange(gewicht4)" v-on:change="test">
         <option :value="diploma.waarde" v-for="diploma in diplomaMoeder">{{diploma.diploma}}</option>
       </select>
 
-
-
-      <select v-model="gewicht4" @change="onchange(gewicht4)" v-on:change="test">
+      <select :style="{background: currentColor}" v-model="gewicht4" @change="onchange(gewicht4)" v-on:change="test">
         <option :value="diploma.waarde" v-for="diploma in diplomaMoeder">{{diploma.diploma}}</option>
       </select>
 
@@ -78,6 +69,7 @@ div.navigation {
 }
 
 li {
+  transition: .2s all;
   border-radius: 10px 100px 0 0;
   width: 22%;
   list-style: none;
@@ -91,6 +83,8 @@ li {
 
 li:first-child {
   margin-left: 0;
+}
+.activeTab{
   z-index: 2;
   width: 30%;
 }
@@ -139,10 +133,21 @@ select {
 //   const colors = ["purple", "orange", "yellow", "red", "green"];
 //   li[i].style.background: colors[i];
 // }
+
 export default {
   data() {
     return {
+      categorien:[
+        {label:"test0", link: "test0", color: "#ff691f" },
+        {label:"test1", link: "test1", color: "#E72A75" },
+        {label:"test2", link: "test2", color: "#A6C71F" },
+        {label:"test3",link: "test3", color: "#32BBE8" },
+        {label:"test4",link: "test4", color: "#F8AB0C" }
+      ],
       testen: "hallo",
+      openTab: "",
+      currentColor:"",
+      currentBorder: "",
       risico: "",
       gewicht1: "",
       gewicht2: "",
@@ -267,6 +272,13 @@ export default {
       // De eerste parameter is hoe je de event noemt
       // Tweede parameter is de data dat je wil meegeven
       this.$emit("changeOk", this.risico)
+    },
+    colorChanging: function(color){
+      this.currentColor = color
+      this.currentBorder = "5px solid " + color
+    },
+    testingIteration(test){
+      this.openTab = test;
     }
   }
 }
