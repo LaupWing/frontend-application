@@ -8,13 +8,13 @@
     <!-- Hieronder word de data test gebind aan een aangemaakte variabele msg -->
     <app-indicator :msg='test' v-on:changeTest="testing($event)"></app-indicator>
   </header>
-  
+
   <nav :style="{transform: navToggle()}">
     <!-- Hier worden de  -->
     <div class="nav-wrap">
       <router-link class="nav-item" to='/'>Home</router-link>
       <router-link class="nav-item" to='/users'>Users</router-link>
-      <router-link class="nav-item" to='/input'>Users</router-link>
+      <router-link class="nav-item" to='/input'>Input</router-link>
     </div>
     <div :style="{background: currentColor}" @click="navControl" class="nav-button">
       <i class="fas fa-sort-up"></i>

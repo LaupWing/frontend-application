@@ -55,7 +55,7 @@ export default {
     border-radius: 50%;
     box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
   }
-  .indicator-wrap:before{
+  /* .indicator-wrap:before{
     content: "";
     display: block;
     border-top: 1px solid #ddd;
@@ -65,7 +65,7 @@ export default {
     position: absolute;
     top: 50%;
     z-index: -1;
-  }
+  } */
   .indicator:before{
     content: "";
   display: block;
