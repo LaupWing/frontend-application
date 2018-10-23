@@ -1,5 +1,7 @@
-# vue-routing (risico taxatie project)
-> A Vue.js project
+# Risico Indicator
+> Vue.js code based project
+## Introduction
+For this project we have to improve the Jeugdhulp Risico indicator(jri) app. This web app was built for the social workers to calculate the chance of the youth of being placed into a foster care. The actual app right work but isnt easy to navigate through. 
 
 ## Build Setup
 
