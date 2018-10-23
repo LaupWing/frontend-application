@@ -10,7 +10,7 @@ NOTE: the proces in the link is written in dutch!
 ### What have i learned about Vue?
 I have learned a lot of how the Vue framework works and the syntaxes that Vue uses. In this chapter im gonna describe all the synthaxes i have learned about Vue.
 
-* Vue works in components
+* **Vue works in components**
 
 
 ### Build Setup
