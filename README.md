@@ -3,7 +3,7 @@
 
 ## Build Setup
 
-```
+``` bash
 # Open your command prompt
 # navigate in your command promt to this folder
 # CD ~this file
