@@ -3,11 +3,6 @@ Dit kan elke element zijn  -->
 <template>
 <div class="main">
   <div class="navigation">
-    <!-- <li style="background: #E72A75">Categorie</li>
-    <li style="background:#A6C71F">Categorie</li>
-    <li style="background:#32BBE8">Categorie</li>
-    <li style="background:#F8AB0C">Categorie</li>
-    <li style="background:lightblue">Categorie</li> -->
 
     <li :class="{activeTab : categorie == openTab}" v-for="categorie in categorien" v-on:click="sendColor" @click="colorChanging(categorie.color), testingIteration(categorie)" :style="{background: categorie.color}"> {{categorie.label}} </li>
 
@@ -15,6 +10,7 @@ Dit kan elke element zijn  -->
 
   </div>
   <div class="userInput" :style="{border: currentBorder}">
+
     <select :style="{background: currentColor}" v-model="gewicht" @change="onchange(gewicht)" v-on:change="test">
       <option value="" disabled selected>Geslacht</option>
       <option :value="geslacht.waarde" v-for="geslacht in geslacht">{{geslacht.geslacht}}</option>
@@ -67,6 +63,181 @@ Dit kan elke element zijn  -->
   </div>
 </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      categorien: [{
+        label: "Persoon",
+        link: "test0",
+        color: "#ff691f"
+      },
+      {
+        label: "Onderwijs",
+        link: "test1",
+        color: "#E72A75"
+      },
+      {
+        label: "Ouders",
+        link: "test2",
+        color: "#A6C71F"
+      },
+      {
+        label: "Categorie",
+        link: "test3",
+        color: "#32BBE8"
+      },
+      {
+        label: "Categorie",
+        link: "test4",
+        color: "#F8AB0C"
+      }
+    ],
+    testen: "hallo",
+    openTab: this.categorien,
+    currentColor: "",
+    currentBorder: "",
+    risico: "",
+    gewicht:"",
+    gewicht1: "",
+    gewicht2: "",
+    gewicht3: "",
+    gewicht4: "",
+    changet: "test",
+    geslacht: [{
+      geslacht: "man",
+      waarde: 0
+    },
+    {
+      geslacht: "vrouw",
+      waarde: -7.36863
+    },
+  ],
+  typeHuisHouden: [{
+    huishouden: "Onbekend",
+    waarde: 0.80564
+  },
+  {
+    huishouden: "Eenouderhuishouden",
+    waarde: 0.49608
+  },
+  {
+    huishouden: "Eenpersoonshuishouden",
+    waarde: 0.49608
+  },
+  {
+    huishouden: "Gehuwd zonder kinderen",
+    waarde: 1.06108
+  },
+  {
+    huishouden: "Institutioneel huidhouden",
+    waarde: 1.92321
+  },
+  {
+    huishouden: "Niet-gehuwd paar met kinderen",
+    waarde: 0.32694
+  },
+  {
+    huishouden: "Niet-gehuwd paar zonder kinderen",
+    waarde: -14.15530
+  },
+  {
+    huishouden: "Overig huishouden",
+    waarde: 0.91365
+  }
+  ],
+  actueleDiploma: [{
+    diploma: "Acutuele onderwijs niveau Basisonderwijs",
+    waarde: -2
+  },
+  {
+    diploma: "Acutuele onderwijs geen data bekend",
+    waarde: -2
+  },
+  {
+    diploma: "Acutuele onderwijs niveau Vmbo-b/k, mbo 1 en mbo2",
+    waarde: -2
+  },
+  {
+    diploma: "Acutuele onderwijs niveau Basisonderwijs",
+    waarde: -2
+  },
+  ],
+  diplomaVader: [{
+    diploma: "Hoogste behaalde diploma Geen onderwijsdata bekend",
+    waarde: 2
+  },
+  {
+    diploma: "Hoogste behaalde diploma Vmbo-b/k, mbo 1 en mbo2",
+    waarde: 2
+  },
+  {
+    diploma: "Hoogste behaalde diploma Vmbo-g/t, mbo 3 en mbo 4",
+    waarde: 2
+  },
+  {
+    diploma: "Hoogste behaalde diploma Vwo en Wo-bachelor en Wo-master",
+    waarde: 2
+  },
+  ],
+  diplomaMoeder: [{
+    diploma: "Hoogste behaalde diploma Geen onderwijsdata bekend",
+    waarde: 2
+  },
+  {
+    diploma: "Hoogste behaalde diploma Vmbo-b/k, mbo 1 en mbo2",
+    waarde: 2
+  },
+  {
+    diploma: "Hoogste behaalde diploma Vmbo-g/t, mbo 3 en mbo 4",
+    waarde: 2
+  },
+  {
+    diploma: "Hoogste behaalde diploma Vwo en Wo-bachelor en Wo-master",
+    waarde: 2
+  },
+  ]
+}
+},
+methods: {
+  onchange(gewicht) {
+    console.log(this.openTab)
+    const array = [this.gewicht, this.gewicht1, this.gewicht2, this.gewicht3, this.gewicht4];
+
+    // reduce moet altijd een function gekoppeld hebben.
+    // reduce telt alle waardes in een array bij elkaar op
+    var sum = array.reduce(function(total, weight) {
+      return total + Number(weight)
+    }, 0)
+    var calc = Number((1 / (1 + Math.exp(-1 * (-8.572219 + sum))) * 100).toFixed(2))
+    this.risico = calc;
+
+  },
+  test: function() {
+    // Hier word een event ge-emit
+    // De eerste parameter is hoe je de event noemt
+    // Tweede parameter is de data dat je wil meegeven
+    this.$emit("changeOk", this.risico)
+  },
+  colorChanging: function(color) {
+    this.currentColor = color;
+    this.currentBorder = "5px solid " + color;
+  },
+  testingIteration(test) {
+    // console.log(data());
+    this.openTab = test;
+  },
+  sendColor: function() {
+    this.$emit("sendingColor", this.currentColor)
+  }
+},
+computed:{
+  starting: function(){
+    return this.categorien[0];
+  }
+}
+}
+</script>
 <style media="screen">
 div.navigation {
   height: 40px;
@@ -136,173 +307,3 @@ select {
   color: white;
 }
 </style>
-<script>
-export default {
-  data() {
-    return {
-      categorien: [{
-          label: "Persoon",
-          link: "test0",
-          color: "#ff691f"
-        },
-        {
-          label: "Onderwijs",
-          link: "test1",
-          color: "#E72A75"
-        },
-        {
-          label: "Ouders",
-          link: "test2",
-          color: "#A6C71F"
-        },
-        {
-          label: "Categorie",
-          link: "test3",
-          color: "#32BBE8"
-        },
-        {
-          label: "Categorie",
-          link: "test4",
-          color: "#F8AB0C"
-        }
-      ],
-      testen: "hallo",
-      openTab: "",
-      currentColor: "",
-      currentBorder: "",
-      risico: "",
-      gewicht:"",
-      gewicht1: "",
-      gewicht2: "",
-      gewicht3: "",
-      gewicht4: "",
-      changet: "test",
-      geslacht: [{
-          geslacht: "man",
-          waarde: 0
-        },
-        {
-          geslacht: "vrouw",
-          waarde: -7.36863
-        },
-      ],
-      typeHuisHouden: [{
-          huishouden: "Onbekend",
-          waarde: 0.80564
-        },
-        {
-          huishouden: "Eenouderhuishouden",
-          waarde: 0.49608
-        },
-        {
-          huishouden: "Eenpersoonshuishouden",
-          waarde: 0.49608
-        },
-        {
-          huishouden: "Gehuwd zonder kinderen",
-          waarde: 1.06108
-        },
-        {
-          huishouden: "Institutioneel huidhouden",
-          waarde: 1.92321
-        },
-        {
-          huishouden: "Niet-gehuwd paar met kinderen",
-          waarde: 0.32694
-        },
-        {
-          huishouden: "Niet-gehuwd paar zonder kinderen",
-          waarde: -14.15530
-        },
-        {
-          huishouden: "Overig huishouden",
-          waarde: 0.91365
-        }
-      ],
-      actueleDiploma: [{
-          diploma: "Acutuele onderwijs niveau Basisonderwijs",
-          waarde: -2
-        },
-        {
-          diploma: "Acutuele onderwijs geen data bekend",
-          waarde: -2
-        },
-        {
-          diploma: "Acutuele onderwijs niveau Vmbo-b/k, mbo 1 en mbo2",
-          waarde: -2
-        },
-        {
-          diploma: "Acutuele onderwijs niveau Basisonderwijs",
-          waarde: -2
-        },
-      ],
-      diplomaVader: [{
-          diploma: "Hoogste behaalde diploma Geen onderwijsdata bekend",
-          waarde: 2
-        },
-        {
-          diploma: "Hoogste behaalde diploma Vmbo-b/k, mbo 1 en mbo2",
-          waarde: 2
-        },
-        {
-          diploma: "Hoogste behaalde diploma Vmbo-g/t, mbo 3 en mbo 4",
-          waarde: 2
-        },
-        {
-          diploma: "Hoogste behaalde diploma Vwo en Wo-bachelor en Wo-master",
-          waarde: 2
-        },
-      ],
-      diplomaMoeder: [{
-          diploma: "Hoogste behaalde diploma Geen onderwijsdata bekend",
-          waarde: 2
-        },
-        {
-          diploma: "Hoogste behaalde diploma Vmbo-b/k, mbo 1 en mbo2",
-          waarde: 2
-        },
-        {
-          diploma: "Hoogste behaalde diploma Vmbo-g/t, mbo 3 en mbo 4",
-          waarde: 2
-        },
-        {
-          diploma: "Hoogste behaalde diploma Vwo en Wo-bachelor en Wo-master",
-          waarde: 2
-        },
-      ]
-    }
-  },
-  methods: {
-    onchange(gewicht) {
-
-      // this.risico = this.risico + gewicht;
-      const array = [this.gewicht, this.gewicht1, this.gewicht2, this.gewicht3, this.gewicht4];
-
-      // reduce moet altijd een function gekoppeld hebben.
-      // reduce telt alle waardes in een array bij elkaar op
-      var sum = array.reduce(function(total, weight) {
-        return total + Number(weight)
-      }, 0)
-      var calc = Number((1 / (1 + Math.exp(-1 * (-8.572219 + sum))) * 100).toFixed(2))
-      this.risico = calc;
-
-    },
-    test: function() {
-      // Hier word een event ge-emit
-      // De eerste parameter is hoe je de event noemt
-      // Tweede parameter is de data dat je wil meegeven
-      this.$emit("changeOk", this.risico)
-    },
-    colorChanging: function(color) {
-      this.currentColor = color
-      this.currentBorder = "5px solid " + color
-    },
-    testingIteration(test) {
-      this.openTab = test;
-    },
-    sendColor: function() {
-      this.$emit("sendingColor", this.currentColor)
-    }
-  }
-}
-</script>

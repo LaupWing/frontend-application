@@ -1,12 +1,10 @@
 # vue-routing (risico taxatie project)
-> A Vue.js project
+Vue.js project
 
 ## Build Setup
-
-``` bash
-# Open your command prompt
-# navigate in your command promt to this folder
-# CD ~this file
+Open your command prompt
+navigate in your command promt to this folder
+CD ~this file
 
 # type npm install to install the neccersary packages
 npm install
@@ -17,4 +15,3 @@ npm run dev
 
 # build for production with minification
 npm run build
-```
