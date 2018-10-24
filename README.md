@@ -10,16 +10,18 @@ NOTE: the proces in the link is written in dutch!
 ### How did i learned Vue
 My usual best practice for a project is by first learning everything then applying what i have learned on the project. So i have watched over 3 courses of Vue from diffrent sources. The sources are from Youtube.com and lynda.com. The actual courses i have used  can be found below with the links attached so you can check them out by yourself.
 
-Source links:
+**Source links:**
 
 Youtube NetNinja:
 <br>
 Link courses: [Vue Beginners course by NetNinja](https://www.youtube.com/watch?v=5LYrN_cAJoA&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa)
 
 Youtube Acedemind:
+<br>
 Link courses: [Vue Getting Started courses by Acedemind](https://www.youtube.com/watch?v=nyJSd6V2DRI&list=PL55RiY5tL51p-YU-Uw90qQH419BM4Iz07)
 
 Lynda Vue:
+<br>
 Link courses: [Learning Vue.js(2017)](https://www.lynda.com/JavaScript-tutorials/Welcome/562924/594465-4.html?srchtrk=index%3a2%0alinktypeid%3a2%0aq%3avue.js%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2)
 
 ### What have i learned about Vue?
