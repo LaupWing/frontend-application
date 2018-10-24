@@ -56,7 +56,9 @@ import Title from './titel.vue';
 // making vue component with the name off app-title from Title
 Vue.component('app-title', Title);
 
-// now we can use the component in every other vue file by declaring as a basic html tag
+```
+``` html
+ <!-- now we can use the component in every other vue file by declaring as a basic html tag -->
 <app-title> </app-title>
 ```
 ***
