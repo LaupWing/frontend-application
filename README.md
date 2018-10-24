@@ -50,25 +50,6 @@ Vue works with diffrent components that will load in the page that you declare i
 The components are the diffrent parts of the website which we can declare everywhere we want. The components in this project are all declared in the main.js file. We import in our main.js file the diffrent vue files and than make components of them. _See below what the syntaxes are for importing vue files and making components of them_
 
 ``` js
-# ____ main.js ____
-import the title.vue as Title
-import Title from './titel.vue';
-
-# making vue component with the name off app-title from Title
-Vue.component('app-title', Title);
-
-```
-``` html
-# ____ name.vue_____
-# now we can use the component in every other vue file by declaring as a basic html tag
-<app-title> </app-title>
-```
-
-
-**_Vue instances_**<br>
-The components are the diffrent parts of the website which we can declare everywhere we want. The components in this project are all declared in the main.js file. We import in our main.js file the diffrent vue files and than make components of them. _See below what the syntaxes are for importing vue files and making components of them_
-
-``` js
 // ____ main.js ____
 // import the title.vue as Title
 import Title from './titel.vue';
@@ -76,6 +57,30 @@ import Title from './titel.vue';
 // making vue component with the name off app-title from Title
 Vue.component('app-title', Title);
 
+```
+``` html
+# ____ name.vue_____
+ <!-- now we can use the component in every other vue file by declaring as a basic html tag -->
+<app-title> </app-title>
+```
+
+
+**_Vue instances_**<br>
+A Vue instance is an object with the properties data, methods, and even compontents(if you use them). In this object we can save data and hold functions. We can reference to this data and function in our html file or our template. _See below for more information of how Vue instances work_
+
+``` js
+// We create first a Vue instance(object) and put it in a variable. NOTE: Its slightly diffrenct synthax if we use this in vue cli packages
+var app5 = new Vue({
+  el: '#app-5', // Target the element so that the element can make use of the vue object properties
+  data: { // we put our data in between this curly braces
+    message: 'Hello Vue.js!' // In the variable message there is a string stored we can use this variable in the #app-5 element now
+  },
+  methods: { // Here are the functions stored
+    reverseMessage: function () { // We can use the reverseMessage function in our #app-5 element now
+      this.message = this.message.split('').reverse().join('')
+    }
+  }
+})
 ```
 
 
