@@ -1,13 +1,17 @@
 # Risico Indicator
 > Vue.js code based project
+***
+
 
 ## Introduction
 For this project we have to improve the Jeugdhulp Risico indicator(jri) app. This web app was built for the social workers to calculate the chance of the youth of being placed into a foster care. The actual app right work but isnt easy to navigate through. Click in the [link](http://174.138.1.153/kindveiligthuis) for the web app. We have to change this app by the framework of our choice to make it easier for the social worker to fill in the data.
+
 
 ***
 ### The proces
 The proces for this project has been very frustrating i dont go in to much detail here. For the whole story of how it went click on this [link](https://locnguyen.gitbook.io/vue-project/)
 NOTE: the proces in the link is written in dutch!
+
 
 ***
 ### How did i learned Vue
@@ -29,11 +33,13 @@ Lynda Vue:
 
 I have watched all the courses to expand my basic knowledge about Vue and seeing diffrent people explaining the basics. Because everyone codes in their own way and i wanted to see how these people explain the Vue basics diffrently.
 ***
+
+
 ### What should i have done diffrently?
 I have completed and watched a lot of courses first before applying it to my project. That was a huge mistake, because before i finished the course i forgot what the instructor explained in the first few chapters so i have to rewatch those chapters. That took up a whole lot of time. The second problem with this approach of first learning all than applying is that i also have to rewatch some parts because i forgot how it acutally works and how it benifits my project. So what i will definitly do diffrent next time is applying the knowledge right away when i learn something in the world of coding. **You will learn more by practicing than learning!**
-
-
 ***
+
+
 ### What have i learned about Vue?
 I have learned a lot of how the Vue framework works and the syntaxes that Vue uses. In this chapter im gonna describe all the synthaxes i have learned about Vue and how Vue works.
 
@@ -46,6 +52,8 @@ The components are the diffrent parts of the website which we can declare everyw
 ```
 Testing
 ```
+***
+
 
 ### Build Setup
 ``` bash
