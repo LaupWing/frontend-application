@@ -33,10 +33,10 @@ I have completed and watched a lot of courses first before applying it to my pro
 ### What have i learned about Vue?
 I have learned a lot of how the Vue framework works and the syntaxes that Vue uses. In this chapter im gonna describe all the synthaxes i have learned about Vue and how Vue works.
 
-**How Vue works**
+**How Vue works**<br>
 Vue works with diffrent components that will load in the page that you declare it to load. That gives us the ability to separate the diffrent components in diffrent files. Each component has template tag with only **one root element** more elements gives an error. Each components also have their own styling and script tag. In the script tag we can export our vue instance to the template to make use of the data in the components. In the templates (which represents the html element) we can use the vue syntaxes to use some javascript in the html document to take control over the lay out. Because we can use javascript in the template we can load in the elements dynamicly.
 
-**_Vue works in components_**
+**_Vue works in components_**<br>
 The components are the diffrent parts of the website which we can declare everywhere we want. The components in this project are all declared in the main.js file. We import in our main.js file the diffrent vue files and than make components of them. _See below what the syntaxes are for importing vue files and making components of them_
 
 ```
