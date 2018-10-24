@@ -50,6 +50,25 @@ Vue works with diffrent components that will load in the page that you declare i
 The components are the diffrent parts of the website which we can declare everywhere we want. The components in this project are all declared in the main.js file. We import in our main.js file the diffrent vue files and than make components of them. _See below what the syntaxes are for importing vue files and making components of them_
 
 ``` js
+# ____ main.js ____
+import the title.vue as Title
+import Title from './titel.vue';
+
+# making vue component with the name off app-title from Title
+Vue.component('app-title', Title);
+
+```
+``` html
+# ____ name.vue_____
+# now we can use the component in every other vue file by declaring as a basic html tag
+<app-title> </app-title>
+```
+
+
+**_Vue instances_**<br>
+The components are the diffrent parts of the website which we can declare everywhere we want. The components in this project are all declared in the main.js file. We import in our main.js file the diffrent vue files and than make components of them. _See below what the syntaxes are for importing vue files and making components of them_
+
+``` js
 // ____ main.js ____
 // import the title.vue as Title
 import Title from './titel.vue';
@@ -58,11 +77,9 @@ import Title from './titel.vue';
 Vue.component('app-title', Title);
 
 ```
-``` html
-<!-- ____ name.vue_____ -->
- <!-- now we can use the component in every other vue file by declaring as a basic html tag -->
-<app-title> </app-title>
-```
+
+
+
 ***
 <br>
 
