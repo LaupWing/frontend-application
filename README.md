@@ -13,6 +13,7 @@ My usual best practice for a project is by first learning everything then applyi
 Source links:
 
 Youtube NetNinja:
+<br>
 Link courses: [Vue Beginners course by NetNinja](https://www.youtube.com/watch?v=5LYrN_cAJoA&list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa)
 
 Youtube Acedemind:
