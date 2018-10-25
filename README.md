@@ -10,6 +10,7 @@ For this project we have to improve the Jeugdhulp Risico indicator(jri) app. Thi
 <br>
 <br>
 ### The proces
+***
 The proces for this project has been very frustrating i dont go in to much detail here. For the whole story of how it went click on this [link](https://locnguyen.gitbook.io/vue-project/)
 NOTE: the proces in the link is written in dutch!
 <br>
@@ -127,6 +128,23 @@ export default { // as you can see its exactly the same but you dont declare in 
     }
   }
 }
+```
+<br>
+
+**_Parent_**
+<br>
+The parent component is used to render it in the index.html. There is only one parent component used in vue and data can only be send to the parent component. Child of the parent component cannot send data to other child components _See below how the parent component is declared_
+
+
+``` js
+// _____Js_____
+import App from './App.vue'; // importing the vue file
+
+new Vue({
+  el: '#app',
+  router,
+  render: h => h(App) // render the App vue file. This means the App is now the parent component
+})
 ```
 <br>
 
@@ -250,10 +268,31 @@ test: function() {
 }
 ```
 <br>
+<br>
+<br>
+### My proudest part of the application
+***
+I am the proudest of knowing how the emit synthax works in Vue. It allowed me to send information from the input.vue file to the parent file(App.vue) and then send it to my other vue file(indicator.vue) to use it there. In most cases you cant send data from one child to another child component. But with the use of emit you can send data to the parent then send it to another child component.
+<br>
 
-
-
-
+By changing the select the v-on:change event starts the test function
+```html
+<select :style="{background: currentColor}" v-model="gewicht4" @change="onchange(gewicht4)" v-on:change="test">
+  <option :value="diploma.waarde" v-for="diploma in diplomaMoeder">{{diploma.diploma}}</option>
+</select>
+```
+<br>
+The emits emit the event with the name of changeOk and gives a parameter this.risico to the parent component
+```js
+test: function() {
+  this.$emit("changeOk", this.risico)
+}
+```
+<br>
+The router-view is where this componets lives in, so we have to listen to the changeOk in this element and start the function with the event as parameter. In the $event lives the parameter which is this.risico in the other component
+```html
+<router-view v-on:sendingColor="colorReceive($event)" v-on:changeOk="testout($event)"></router-view>
+```
 
 
 
