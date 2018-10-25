@@ -46,11 +46,17 @@ I have learned a lot of how the Vue framework works and the syntaxes that Vue us
 **How Vue works**<br>
 Vue works with diffrent components that will load in the page that you declare it to load. That gives us the ability to separate the diffrent components in diffrent files. Each component has template tag with only **one root element** more elements gives an error. Each components also have their own styling and script tag. In the script tag we can export our vue instance(see below for the explaination of vue instance) to the template to make use of the data in the components. In the templates (which represents the html element) we can use the vue syntaxes to use some javascript in the html document to take control over the lay out. Because we can use javascript in the template we can load in the elements dynamicly.
 
-**_Vue components_**<br>
-The components are the diffrent parts of the website which we can declare everywhere we want. The components in this project are all declared in the main.js file. We import in our main.js file the diffrent vue files and than make components of them. _See below what the syntaxes are for importing vue files and making components of them_
+**_Diffrence between vue in js file and vue cli packages_**<br>
+At first i thought the vue syntaxes are everywhere the same. But there are actually some diffrenence between the synthax depending in the way you wanna use the vue framework. The first big diffrence is that you declare your components diffrently _(see the section Vue components for more detail)_. The other diffrence is in the instances of the Vue the way you write them is a little bit diffrent _(see the section Vue instances for more detail)_
 
+
+
+**_Vue components_**<br>
+The components are the diffrent parts of the website which we can declare everywhere we want. The components in this project are all declared in the main.js file. We import in our main.js file the diffrent vue files and than make components of them. If you use vue in a js file instead of vue file you have to declare the components diffrently. _See below what the syntaxes are for importing vue files and making components of them_
+
+Through vue cli .vue files
 ``` js
-// ____ main.js ____
+// _____Js_____
 // import the title.vue as Title
 import Title from './titel.vue';
 
@@ -58,8 +64,22 @@ import Title from './titel.vue';
 Vue.component('app-title', Title);
 
 ```
+
+
+Through .js files:<br>
+Instead of using the whole document as template and properties you have to write the whole template in the component as one object
+``` js
+// _____Js_____
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+
+```
+
+
 ``` html
-# ____ name.vue_____
+<!-- _____Html_____ -->
  <!-- now we can use the component in every other vue file by declaring as a basic html tag -->
 <app-title> </app-title>
 ```
@@ -68,10 +88,13 @@ Vue.component('app-title', Title);
 **_Vue instances_**<br>
 A Vue instance is an object with the properties data, methods, and even compontents(if you use them). In this object we can save data and hold functions. We can reference to this data and function in our html file or our template. _See below for more information of how Vue instances work_
 
+
+Through basic js file you have to use the vue instance like below
 ``` js
+// _____Js_____
 // We create first a Vue instance(object) and put it in a variable. NOTE: Its slightly diffrenct synthax if we use this in vue cli packages
-var app5 = new Vue({
-  el: '#app-5', // Target the element so that the element can make use of the vue object properties
+var app = new Vue({
+  el: '#app', // Target the element so that the element can make use of the vue object properties
   data: { // we put our data in between this curly braces
     message: 'Hello Vue.js!' // In the variable message there is a string stored we can use this variable in the #app-5 element now
   },
@@ -82,6 +105,98 @@ var app5 = new Vue({
   }
 })
 ```
+
+If you use a vue package or you make use of vue files you have to write your instances like below:
+``` js
+// _____Vue_____
+export default { // as you can see its exactly the same but you dont declare in which element you want to put it in
+  data() {
+    return{
+      message: "test"
+    }
+  },
+  methods:{
+    testFunction: function(){
+      return "just a test"
+    }
+  }
+}
+```
+
+**_{{Mustache}}_**<br>
+You can use the data in the vue instances and print out the value in the data by using the mustache declaration by putting the property name in between the mustache symbol. _See below for more information of how Vue instances work_
+
+
+Through basic js file you have to use the vue instance like below
+``` html
+<div>
+  {{propertyData}}
+</div>
+```
+
+**_v-html_**<br>
+You can use the data in the vue instances and print out the value in the data by using the mustache declaration by putting the property name in between the mustache symbol. _See below for more information of how Vue instances work_
+
+
+Through basic js file you have to use the vue instance like below
+``` html
+<div>
+  {{propertyData}}
+</div>
+```
+
+**_v-if_**<br>
+A v-if is declared in the template self or in the html document (it depends on if you make use of the vue cli or templates to make your vue file). The v-if syntax allows us to use if statements in the html document itself so that _See below for more information of the v-if synthax_
+
+``` html
+<!-- _____Html_____ -->
+<div id="app">
+   <span v-if="seen">Now you see me</span><!-- Span berichtje word weergeven als seen op true staat anders niet -->
+</div>
+```
+``` js
+// _____Js_____
+var app3 = new Vue({
+  el: '#app',
+  data: {
+    seen: true // staat op true dus de element in het html document word weergeven
+  }
+})
+```
+
+**_v-for_**<br>
+You can use for loops in the html document by declaring just like the v-if a v-for in the html element. The v-for uses just like v-if also data from the vue intance, but instead of using one string or number it is normally used with a array data _See below for more information of the v-for synthax_
+
+``` html
+<!-- _____Html_____ -->
+<div id="app">
+  <ol>
+    <li v-for="todo in todos"> <!--The v-for syntax creates a new variable to loop through the todos array  -->
+      {{ todo.text }} <!-- The newly made variable is used to loop through and print out the value in the text property for each iteration -->
+   </li>
+ </ol>
+</div>
+```
+``` js
+// _____Js_____
+var app = new Vue({
+  el: '#app',
+  data: {
+    todos: [ // Array
+      { text: 'Learn JavaScript' }, // property name text with a value stored in it
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ]
+  }
+})
+```
+
+
+
+
+
+
+
 
 
 
