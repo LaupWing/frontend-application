@@ -7,12 +7,14 @@
 ***
 For this project we have to improve the Jeugdhulp Risico indicator(jri) app. This web app was built for the social workers to calculate the chance of the youth of being placed into a foster care. The actual app right work but isnt easy to navigate through. Click in the [link](http://174.138.1.153/kindveiligthuis) for the web app. We have to change this app by the framework of our choice to make it easier for the social worker to fill in the data.
 <br>
-
+<br>
+<br>
 ### The proces
 The proces for this project has been very frustrating i dont go in to much detail here. For the whole story of how it went click on this [link](https://locnguyen.gitbook.io/vue-project/)
 NOTE: the proces in the link is written in dutch!
 <br>
-
+<br>
+<br>
 ### How did i learned Vue
 ***
 My usual best practice for a project is by first learning everything then applying what i have learned on the project. So i have watched over 3 courses of Vue from diffrent sources. The sources are from Youtube.com and lynda.com. The actual courses i have used  can be found below with the links attached so you can check them out by yourself.
@@ -33,12 +35,14 @@ Lynda Vue:
 
 I have watched all the courses to expand my basic knowledge about Vue and seeing diffrent people explaining the basics. Because everyone codes in their own way and i wanted to see how these people explain the Vue basics diffrently.
 <br>
-
+<br>
+<br>
 ### What should i have done diffrently?
 ***
 I have completed and watched a lot of courses first before applying it to my project. That was a huge mistake, because before i finished the course i forgot what the instructor explained in the first few chapters so i have to rewatch those chapters. That took up a whole lot of time. The second problem with this approach of first learning all than applying is that i also have to rewatch some parts because i forgot how it acutally works and how it benifits my project. So what i will definitly do diffrent next time is applying the knowledge right away when i learn something in the world of coding. **You will learn more by practicing than learning!**
 <br>
-
+<br>
+<br>
 ### What have i learned about Vue?
 ***
 I have learned a lot of how the Vue framework works and the syntaxes that Vue uses. In this chapter im gonna describe all the synthaxes i have learned about Vue and how Vue works.
@@ -129,7 +133,7 @@ export default { // as you can see its exactly the same but you dont declare in 
 
 **_{{Mustache}}_**
 <br>
-You can use the data in the vue instances and print out the value in the data by using the mustache declaration by putting the property name in between the mustache symbol. _See below for more information of how Vue instances work_
+You can use the data in the vue instances and print out the value in the data by using the mustache declaration by putting the property name in between the mustache symbol. _See below for more information of how mustaches work_
 
 
 Through basic js file you have to use the vue instance like below
@@ -144,7 +148,7 @@ Through basic js file you have to use the vue instance like below
 
 **_v-html_**
 <br>
-Just like the mustache synthax the v-html prints out the value of a property from the vue instance. The big diffrence between those two is that the v-html doesnt print the value as a string but as an actual html synthax. This allows use legit html codes that are stored in the data property. _See below for more information of how Vue instances work_
+Just like the mustache synthax the v-html prints out the value of a property from the vue instance. The big diffrence between those two is that the v-html doesnt print the value as a string but as an actual html synthax. This allows use legit html codes that are stored in the data property. _See below for more information of how v-html work_
 
 
 Through basic js file you have to use the vue instance like below
@@ -215,18 +219,35 @@ var app = new Vue({
   }
 })
 ```
-
-**_{{Mustache}}_**
 <br>
-You can use the data in the vue instances and print out the value in the data by using the mustache declaration by putting the property name in between the mustache symbol. _See below for more information of how Vue instances work_
+
+
+**_v-on:_**
+<br>
+The v-on sythaxes listens to an event in the element where it is declared. The list of elements are the same as the events that you can find in normal javascript such as click, scroll, mouseover and more. The v-on syntax usually refers to a function _See below for more information of how v-on work_
 
 
 Through basic js file you have to use the vue instance like below
 ``` html
 <!-- _____Html_____ -->
 <div>
-  {{propertyData}}
+  <p v-on:click="testingFunction"></p>
 </div>
+```
+<br>
+
+
+**_$emit_**
+<br>
+The emits sends sends the event to another component(usally this is the parent element because components cant send data to other components) In the emit you have the ability to send data as parameter to the parent component so that it can be used there. _See below for more information of how emit work_
+
+
+Through basic js file you have to use the vue instance like below
+``` js
+// _____Js_____
+test: function() {
+  this.$emit("changeOk", this.risico) // this.risico is value that is given to the parent compoent with the name of changeOk
+}
 ```
 <br>
 
