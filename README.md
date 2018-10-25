@@ -270,6 +270,7 @@ test: function() {
 <br>
 <br>
 <br>
+
 ### My proudest part of the application
 ***
 I am the proudest of knowing how the emit synthax works in Vue. It allowed me to send information from the input.vue file to the parent file(App.vue) and then send it to my other vue file(indicator.vue) to use it there. In most cases you cant send data from one child to another child component. But with the use of emit you can send data to the parent then send it to another child component.
