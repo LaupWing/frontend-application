@@ -83,9 +83,11 @@ Vue.component('todo-item', {
  <!-- now we can use the component in every other vue file by declaring as a basic html tag -->
 <app-title> </app-title>
 ```
-
 <br>
-**_Vue instances_**<br>
+
+
+**_Vue instances_**
+<br>
 A Vue instance is an object with the properties data, methods, and even compontents(if you use them). In this object we can save data and hold functions. We can reference to this data and function in our html file or our template. _See below for more information of how Vue instances work_
 
 
