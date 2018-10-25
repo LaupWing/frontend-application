@@ -348,7 +348,9 @@ testingIteration(test) {
 ### What i have done when i had more time for this project
 
 ⋅⋅* Add messages for the social worker. Giving advice by certain amount of risk for potential actions which helps the social workers
+
 ⋅⋅* Made a routing within the input form. The input form is now just static over all tabs.
+
 ⋅⋅* Make the code more dynamic. I have to much copy paste work in some parts of my code. This can be better.
 
 <br>
