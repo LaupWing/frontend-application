@@ -49,7 +49,7 @@ Vue works with diffrent components that will load in the page that you declare i
 **_Diffrence between vue in js file and vue cli packages_**<br>
 At first i thought the vue syntaxes are everywhere the same. But there are actually some diffrenence between the synthax depending in the way you wanna use the vue framework. The first big diffrence is that you declare your components diffrently _(see the section Vue components for more detail)_. The other diffrence is in the instances of the Vue the way you write them is a little bit diffrent _(see the section Vue instances for more detail)_
 
-
+<br>
 
 **_Vue components_**<br>
 The components are the diffrent parts of the website which we can declare everywhere we want. The components in this project are all declared in the main.js file. We import in our main.js file the diffrent vue files and than make components of them. If you use vue in a js file instead of vue file you have to declare the components diffrently. _See below what the syntaxes are for importing vue files and making components of them_
@@ -84,7 +84,7 @@ Vue.component('todo-item', {
 <app-title> </app-title>
 ```
 
-
+<br>
 **_Vue instances_**<br>
 A Vue instance is an object with the properties data, methods, and even compontents(if you use them). In this object we can save data and hold functions. We can reference to this data and function in our html file or our template. _See below for more information of how Vue instances work_
 
@@ -122,7 +122,7 @@ export default { // as you can see its exactly the same but you dont declare in 
   }
 }
 ```
-
+<br>
 **_{{Mustache}}_**<br>
 You can use the data in the vue instances and print out the value in the data by using the mustache declaration by putting the property name in between the mustache symbol. _See below for more information of how Vue instances work_
 
@@ -133,7 +133,7 @@ Through basic js file you have to use the vue instance like below
   {{propertyData}}
 </div>
 ```
-
+<br>
 **_v-html_**<br>
 You can use the data in the vue instances and print out the value in the data by using the mustache declaration by putting the property name in between the mustache symbol. _See below for more information of how Vue instances work_
 
@@ -144,7 +144,7 @@ Through basic js file you have to use the vue instance like below
   {{propertyData}}
 </div>
 ```
-
+<br>
 **_v-if_**<br>
 A v-if is declared in the template self or in the html document (it depends on if you make use of the vue cli or templates to make your vue file). The v-if syntax allows us to use if statements in the html document itself so that _See below for more information of the v-if synthax_
 
@@ -163,7 +163,7 @@ var app3 = new Vue({
   }
 })
 ```
-
+<br>
 **_v-for_**<br>
 You can use for loops in the html document by declaring just like the v-if a v-for in the html element. The v-for uses just like v-if also data from the vue intance, but instead of using one string or number it is normally used with a array data _See below for more information of the v-for synthax_
 
