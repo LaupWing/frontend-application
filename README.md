@@ -4,17 +4,17 @@
 <br>
 
 ## Introduction
-For this project we have to improve the Jeugdhulp Risico indicator(jri) app. This web app was built for the social workers to calculate the chance of the youth of being placed into a foster care. The actual app right work but isnt easy to navigate through. Click in the [link](http://174.138.1.153/kindveiligthuis) for the web app. We have to change this app by the framework of our choice to make it easier for the social worker to fill in the data.
 ***
+For this project we have to improve the Jeugdhulp Risico indicator(jri) app. This web app was built for the social workers to calculate the chance of the youth of being placed into a foster care. The actual app right work but isnt easy to navigate through. Click in the [link](http://174.138.1.153/kindveiligthuis) for the web app. We have to change this app by the framework of our choice to make it easier for the social worker to fill in the data.
 <br>
 
 ### The proces
 The proces for this project has been very frustrating i dont go in to much detail here. For the whole story of how it went click on this [link](https://locnguyen.gitbook.io/vue-project/)
 NOTE: the proces in the link is written in dutch!
-***
 <br>
 
 ### How did i learned Vue
+***
 My usual best practice for a project is by first learning everything then applying what i have learned on the project. So i have watched over 3 courses of Vue from diffrent sources. The sources are from Youtube.com and lynda.com. The actual courses i have used  can be found below with the links attached so you can check them out by yourself.
 
 **Source links:**
@@ -32,15 +32,15 @@ Lynda Vue:
 *Link courses: [Learning Vue.js(2017)](https://www.lynda.com/JavaScript-tutorials/Welcome/562924/594465-4.html?srchtrk=index%3a2%0alinktypeid%3a2%0aq%3avue.js%0apage%3a1%0as%3arelevance%0asa%3atrue%0aproducttypeid%3a2)*
 
 I have watched all the courses to expand my basic knowledge about Vue and seeing diffrent people explaining the basics. Because everyone codes in their own way and i wanted to see how these people explain the Vue basics diffrently.
-***
 <br>
 
 ### What should i have done diffrently?
-I have completed and watched a lot of courses first before applying it to my project. That was a huge mistake, because before i finished the course i forgot what the instructor explained in the first few chapters so i have to rewatch those chapters. That took up a whole lot of time. The second problem with this approach of first learning all than applying is that i also have to rewatch some parts because i forgot how it acutally works and how it benifits my project. So what i will definitly do diffrent next time is applying the knowledge right away when i learn something in the world of coding. **You will learn more by practicing than learning!**
 ***
+I have completed and watched a lot of courses first before applying it to my project. That was a huge mistake, because before i finished the course i forgot what the instructor explained in the first few chapters so i have to rewatch those chapters. That took up a whole lot of time. The second problem with this approach of first learning all than applying is that i also have to rewatch some parts because i forgot how it acutally works and how it benifits my project. So what i will definitly do diffrent next time is applying the knowledge right away when i learn something in the world of coding. **You will learn more by practicing than learning!**
 <br>
 
 ### What have i learned about Vue?
+***
 I have learned a lot of how the Vue framework works and the syntaxes that Vue uses. In this chapter im gonna describe all the synthaxes i have learned about Vue and how Vue works.
 
 **How Vue works**<br>
@@ -134,6 +134,7 @@ You can use the data in the vue instances and print out the value in the data by
 
 Through basic js file you have to use the vue instance like below
 ``` html
+<!-- _____Html_____ -->
 <div>
   {{propertyData}}
 </div>
@@ -143,14 +144,24 @@ Through basic js file you have to use the vue instance like below
 
 **_v-html_**
 <br>
-You can use the data in the vue instances and print out the value in the data by using the mustache declaration by putting the property name in between the mustache symbol. _See below for more information of how Vue instances work_
+Just like the mustache synthax the v-html prints out the value of a property from the vue instance. The big diffrence between those two is that the v-html doesnt print the value as a string but as an actual html synthax. This allows use legit html codes that are stored in the data property. _See below for more information of how Vue instances work_
 
 
 Through basic js file you have to use the vue instance like below
 ``` html
-<div>
-  {{propertyData}}
+<!-- _____Html_____ -->
+<div id="app">
+  <p v-html="Testing"></p>
 </div>
+```
+``` js
+<!-- _____js_____ -->
+var app = new Vue({
+  el: '#app',
+  data: {
+    testing: <span>a legit html</span> // because in the html we call it as a v-html it doesnt show the span tag
+  }
+})
 ```
 <br>
 
@@ -205,6 +216,19 @@ var app = new Vue({
 })
 ```
 
+**_{{Mustache}}_**
+<br>
+You can use the data in the vue instances and print out the value in the data by using the mustache declaration by putting the property name in between the mustache symbol. _See below for more information of how Vue instances work_
+
+
+Through basic js file you have to use the vue instance like below
+``` html
+<!-- _____Html_____ -->
+<div>
+  {{propertyData}}
+</div>
+```
+<br>
 
 
 
