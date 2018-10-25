@@ -276,7 +276,8 @@ test: function() {
 
 I am the proudest of knowing how the emit synthax works in Vue. It allowed me to send information from the input.vue file to the parent file(App.vue) and then send it to my other vue file(indicator.vue) to use it there. In most cases you cant send data from one child to another child component. But with the use of emit you can send data to the parent then send it to another child component.
 <br>
-
+![alt text][logo]
+[logo]: images/menu.png "menu"
 By changing the v-on:change event starts the test function
 
 ```html
@@ -301,6 +302,18 @@ The router-view is where this componets lives in, so we have to listen to the ch
 
 ```html
 <router-view v-on:sendingColor="colorReceive($event)" v-on:changeOk="testout($event)"></router-view>
+```
+
+<br>
+<br>
+
+Another part of application where i am pretty proud of is the changing menu size. This is done by adding a class to the menu when it is clicked. And the changing colors of the border and the input fields by click.
+<br>
+
+By changing the v-on:change event starts the test function
+
+```html
+<li :class="{activeTab : categorie == openTab}" v-for="categorie in categorien" v-on:click="sendColor" @click="colorChanging(categorie.color), testingIteration(categorie)" :style="{background: categorie.color}"> {{categorie.label}} </li>
 ```
 
 
