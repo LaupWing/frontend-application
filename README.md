@@ -310,13 +310,27 @@ The router-view is where this componets lives in, so we have to listen to the ch
 
 Another part of application where i am pretty proud of is the changing menu size. This is done by adding a class to the menu when it is clicked. And the changing colors of the border and the input fields by click.
 <br>
+![alt text](https://github.com/LaupWing/frontend-application/blob/master/images/menuColorchanging.png "Logo Title Text 1")
+<br>
 
-By changing the v-on:change event starts the test function
-
+By clicking two function are started the colorChanging function which holds the current categorie color value and the testingIteration function with the current categorie iteration as parameter. The class of activeTab is added when the categorie is equal to openTab and that is done in the testingIteration function. The style of the input is set by the currentColor data which is set by the function colorChanging.
 ```html
 <li :class="{activeTab : categorie == openTab}" v-for="categorie in categorien" v-on:click="sendColor" @click="colorChanging(categorie.color), testingIteration(categorie)" :style="{background: categorie.color}"> {{categorie.label}} </li>
 ```
 
+<br>
+
+In the mehtods the functions sets the current iteration in the loop equal to the the data which sets the color for the rest of the elements.
+```js
+colorChanging: function(color) {
+  this.currentColor = color;
+  this.currentBorder = "5px solid " + color;
+},
+testingIteration(test) {
+  // console.log(data());
+  this.openTab = test;
+}
+```
 
 
 
