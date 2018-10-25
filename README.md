@@ -271,6 +271,16 @@ test: function() {
 <br>
 <br>
 
+### The application
+***
+
+
+
+![alt text](https://github.com/LaupWing/frontend-application/blob/master/images/menu.png "Logo Title Text 1")
+<br>
+<br>
+<br>
+
 ### My proudest part of the application
 ***
 
