@@ -273,7 +273,7 @@ test: function() {
 
 ### The application
 ***
-When someone first enters the web application they are greeted in the home page. The header consist only of the risk indicator with a number inside it. This number represents the chance of someone getting evicted from their home. The user can navigate through the sidebar on the left. By clicking on the the tiny tab the sidmenu reveals itself and the user can go to three diffrent subpages Home, users and input. The users lets the user see the complete list of the clients of the social workers and in the input the social worker can fill in the information about their client. In the input when the user change the input the indicator in the header changes with the input. 
+When someone first enters the web application they are greeted in the home page. The header consist only of the risk indicator with a number inside it. This number represents the chance of someone getting evicted from their home. The user can navigate through the sidebar on the left. By clicking on the the tiny tab the sidmenu reveals itself and the user can go to three diffrent subpages Home, users and input. The users lets the user see the complete list of the clients of the social workers and in the input the social worker can fill in the information about their client. In the input when the user change the input the indicator in the header changes with the input.
 
 
 ![alt text](https://github.com/LaupWing/frontend-application/blob/master/images/whole%20app.png "Logo Title Text 1")
@@ -341,11 +341,17 @@ testingIteration(test) {
   this.openTab = test;
 }
 ```
+<br>
+<br>
+<br>
 
+### What i have done when i had more time for this project
+⋅⋅* Add messages for the social worker. Giving advice by certain amount of risk for potential actions which helps the social workers
+⋅⋅* Made a routing within the input form. The input form is now just static over all tabs.
+⋅⋅* Make the code more dynamic. I have to much copy paste work in some parts of my code. This can be better.
 
-
-
-***
+<br>
+<br>
 <br>
 
 ### Build Setup
