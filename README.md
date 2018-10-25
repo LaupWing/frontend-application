@@ -276,7 +276,7 @@ test: function() {
 
 
 
-![alt text](https://github.com/LaupWing/frontend-application/blob/master/images/menu.png "Logo Title Text 1")
+![alt text](https://github.com/LaupWing/frontend-application/blob/master/images/whole%20app.png "Logo Title Text 1")
 <br>
 <br>
 <br>
