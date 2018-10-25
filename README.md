@@ -277,7 +277,7 @@ test: function() {
 I am the proudest of knowing how the emit synthax works in Vue. It allowed me to send information from the input.vue file to the parent file(App.vue) and then send it to my other vue file(indicator.vue) to use it there. In most cases you cant send data from one child to another child component. But with the use of emit you can send data to the parent then send it to another child component.
 <br>
 
-By changing the select the v-on:change event starts the test function\
+By changing the v-on:change event starts the test function
 
 ```html
 <select :style="{background: currentColor}" v-model="gewicht4" @change="onchange(gewicht4)" v-on:change="test">
@@ -296,6 +296,7 @@ test: function() {
 ```
 
 <br>
+
 The router-view is where this componets lives in, so we have to listen to the changeOk in this element and start the function with the event as parameter. In the $event lives the parameter which is this.risico in the other component
 
 ```html
