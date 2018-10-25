@@ -124,7 +124,7 @@ export default { // as you can see its exactly the same but you dont declare in 
   }
 }
 ```
-
+<br>
 
 
 **_{{Mustache}}_**
@@ -138,7 +138,7 @@ Through basic js file you have to use the vue instance like below
   {{propertyData}}
 </div>
 ```
-
+<br>
 
 
 **_v-html_**
@@ -152,7 +152,7 @@ Through basic js file you have to use the vue instance like below
   {{propertyData}}
 </div>
 ```
-
+<br>
 
 
 **_v-if_**
@@ -174,7 +174,7 @@ var app3 = new Vue({
   }
 })
 ```
-
+<br>
 
 
 **_v-for_**
