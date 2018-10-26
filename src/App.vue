@@ -10,8 +10,9 @@
   </header>
 
   <nav :style="{transform: navToggle()}">
-    <!-- Hier worden de  -->
     <div class="nav-wrap">
+      <!-- Hier worden de verschillende linnkjes weergeven van routes  -->
+      <!-- De routes worden gedecladeerd in de main.js file in de const routes -->
       <router-link class="nav-item" to='/'>Home</router-link>
       <router-link class="nav-item" to='/users'>Users</router-link>
       <router-link class="nav-item" to='/input'>Input</router-link>
@@ -20,18 +21,15 @@
       <i class="fas fa-sort-up"></i>
     </div>
   </nav>
-  <!-- Hier worden de verschillende route component geladen -->
+  <!-- Hier worden de verschillende route component geladen  -->
+  <!-- De routes worden gedecladeerd in de main.js file in de const routes -->
   <router-view v-on:sendingColor="colorReceive($event)" v-on:changeOk="testout($event)"></router-view>
 </div>
 </template>
 
 <script>
-// const nav = document.querySelector(".nav");
-// console.log(nav);
-// const navButton = document.querySelector(".nav-button");
-// navButton.addEventListener("click", function(){
-//   console.log("test")
-// })
+// Hieronder worden het vue instance ge-exporteerd naar t template hierboven, zodat de template gebruikt
+// kan maken van de data methods etc van de vue instance
 export default {
   data() {
     return {

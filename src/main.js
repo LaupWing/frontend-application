@@ -10,6 +10,7 @@ import Input from './input.vue';
 import Indicator from './indicator.vue';
 import Title from './titel.vue';
 
+
 // --Hier word een components gemaakt zodat we dit in de hoofd pagina kunnen gebruiken
 //-- als de component test heet moet je dan <test></test> gebruiken
 // het werkt net als een normale element dan dus!
@@ -17,6 +18,7 @@ import Title from './titel.vue';
 // Bekijk simpelTesten.vue bestand hoe dit in zijn werking gaat
 Vue.component('app-indicator', Indicator);
 Vue.component('app-title', Title);
+
 
 // --Vue.use zorgt ervoor dat we de vue router package kunne gebruiken
 // --Router zorgt ervoor dat als je een nieuwe component laat dat laden
