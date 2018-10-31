@@ -201,7 +201,7 @@ export default {
 },
 methods: {
   onchange(gewicht) {
-    console.log(this.openTab)
+    // console.log(this.openTab)
     const array = [this.gewicht, this.gewicht1, this.gewicht2, this.gewicht3, this.gewicht4];
 
     // reduce moet altijd een function gekoppeld hebben.
@@ -211,7 +211,7 @@ methods: {
     }, 0)
     var calc = Number((1 / (1 + Math.exp(-1 * (-8.572219 + sum))) * 100).toFixed(2))
     this.risico = calc;
-
+    localStorage.setItem("indicator", JSON.stringify(this.risico));
   },
   test: function() {
     // Hier word een event ge-emit

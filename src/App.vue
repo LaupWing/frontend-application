@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       openNav: false,
-      test: 'testen',
+      test: JSON.parse(localStorage.getItem("indicator")),
       test2: "De echt test",
       currentColor: "",
     }
@@ -44,8 +44,9 @@ export default {
       this.test = event
     },
     testout: function(event) {
-      console.log(event)
-      this.test = event
+      // console.log(event)
+      this.test = JSON.parse(localStorage.getItem("indicator"))
+      console.log(this.test)
     },
     colorReceive: function(color){
       this.currentColor = color
