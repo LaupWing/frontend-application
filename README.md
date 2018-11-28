@@ -11,6 +11,26 @@
 - [x] Geen Readme
 - [x] Geen local storage
 
+Van de punten hierboven kan je zien dat ik van de feedback alleen de eerst niet heb kunnen maken. Naast dit vak had ik nog andere hekansingen in deze week dus ik kwam er niet aan toe om nog aan de code te zitten voor dit vak. Ik ga na de herkansing alsnog hieraan werken om te kijken hoe ik dingen beter kan maken! 
+
+**Geen Readme**
+
+Readme toegevoegd. Proces, projectuitleg, kennis over vue, applicatie uitleg en linkjes naar mijn leer bronnen staan allemaal hierin. 
+
+**Geen local storage**
+
+Naast de Readme heb ik een kleine stukje code toegevoegd aan de applicatie, waardoor nu de ingevulde gegevens opgeslagen word in de localstorage. 
+```js
+// Bevind zich in de input.vue file
+localStorage.setItem("indicator", JSON.stringify(this.risico));
+
+// Bevind zich in de App.vue file
+JSON.parse(localStorage.getItem("indicator"))
+```
+In de eerste regel word er in de localstorage een key aangemaakt met genaamd indicator en in de indicator komt de string waarde van t huidige risico cijfer
+
+In de tweede zin word de waarde in de key indicator opgehaald en geparsed, om het te presenteren
+
 
 
 ## Introduction
