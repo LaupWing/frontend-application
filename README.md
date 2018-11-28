@@ -13,9 +13,13 @@
 
 Van de punten hierboven kan je zien dat ik van de feedback alleen de eerst niet heb kunnen maken. Naast dit vak had ik nog andere hekansingen in deze week dus ik kwam er niet aan toe om nog aan de code te zitten voor dit vak. Ik ga na de herkansing alsnog hieraan werken om te kijken hoe ik dingen beter kan maken! 
 
+<br>
+
 **Geen Readme**
 
 Readme toegevoegd. Proces, projectuitleg, kennis over vue, applicatie uitleg en linkjes naar mijn leer bronnen staan allemaal hierin. 
+
+<br>
 
 **Geen local storage**
 
