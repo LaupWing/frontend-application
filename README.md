@@ -7,7 +7,7 @@
 
 ### Feedback:
 
-- [ ]veel herhaling in de code
+- [ ] Veel herhaling in de code
 - [x] Geen Readme
 - [x] Geen local storage
 
